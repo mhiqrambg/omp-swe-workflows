@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+  "mcpServers": {
+    "figcraft": {
+      "command": "${FIGCRAFT_CLI:-figcraft-cli}",
+      "args": [
+        "mcp",
+        "--automation-read-root",
+        "${FIGCRAFT_ROOT:-.}",
+        "--automation-write-root",
+        "${FIGCRAFT_OUT:-.}"
+      ],
+      "enabled": false
+    },
+    "figcraft-attached": {
+      "command": "${FIGCRAFT_CLI:-figcraft-cli}",
+      "args": [
+        "mcp",
+        "--attach",
+        "${FIGCRAFT_CONTROL_PORT:-7979}"
+      ],
+      "enabled": false
+    },
+    "drawio": {
+      "command": "${DRAWIO_MCP_COMMAND:-npx}",
+      "args": ["-y", "@drawio/mcp"],
+      "env": {
+        "DRAWIO_BASE_URL": "${DRAWIO_BASE_URL:-https://app.diagrams.net/}",
+        "DRAWIO_BROWSER": "${DRAWIO_BROWSER:-off}"
+      },
+      "enabled": false
+    }
+  },
+  "disabledServers": []
+}

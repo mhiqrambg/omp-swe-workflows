@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+  "mcpServers": {
+    "drawio": {
+      "command": "${DRAWIO_MCP_COMMAND:-npx}",
+      "args": ["-y", "@drawio/mcp"],
+      "env": {
+        "DRAWIO_BASE_URL": "${DRAWIO_BASE_URL:-https://app.diagrams.net/}",
+        "DRAWIO_BROWSER": "${DRAWIO_BROWSER:-off}"
+      },
+      "enabled": false
+    }
+  },
+  "disabledServers": []
+}
